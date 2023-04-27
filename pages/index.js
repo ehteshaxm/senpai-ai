@@ -28,7 +28,7 @@ export default function Home() {
   };
 
   return (
-    <div className='min-h-screen bg-gray-50'>
+    <div className='min-h-screen bg-gray-50 text-black'>
       <div className='w-full h-52 bg-sky-400 overflow-hidden border-b border-stone-200'>
         <img src='/sky.jpg' className='max-w-full md:-mt-96 -mt-8' />
       </div>
@@ -67,7 +67,7 @@ export default function Home() {
           ))}
         </div>
       </div>
-      <div className='text-center mt-32 mb-5 text-sm text-gray-400'>
+      <div className='text-center mt-32 pb-5 text-sm text-gray-400'>
         All content © 2023 Senpai AI
       </div>
     </div>
