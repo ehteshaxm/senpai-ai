@@ -33,9 +33,25 @@ export default function Home() {
         <img src='/sky.jpg' className='max-w-full md:-mt-96 -mt-8' />
       </div>
       <div className='max-w-3xl mx-auto flex justify-between md:flex-row flex-col'>
-        <div className='-mt-20 md:-mt-28 ml-5 md:ml-0 md:h-64 md:w-64 h-40 w-40 rounded-xl overflow-hidden border-neutral-500 border shadow-2xl'>
-          <div className='w-full h-full bg-orange-100'>
-            <Image src='/sunshine.gif' width='300' height='80' />
+        <div>
+          <div className='-mt-20 mb-10 md:-mt-28 ml-5 md:ml-0 md:h-64 md:w-64 h-40 w-40 rounded-xl overflow-hidden border-neutral-500 border shadow-2xl'>
+            <div className='w-full h-full bg-orange-100'>
+              <Image src='/sunshine.gif' width='300' height='80' />
+            </div>
+          </div>
+          <div className='pl-5 md:pl-0'>
+            <a
+              href='https://www.producthunt.com/posts/senpai-ai?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-senpai&#0045;ai'
+              target='_blank'
+            >
+              <img
+                src='https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=391831&theme=light'
+                alt='Senpai&#0032;AI - Let&#0032;our&#0032;AI&#0032;guide&#0032;you&#0032;through&#0032;meditation | Product Hunt'
+                className='w-52 md:w-64'
+                width='250'
+                height='54'
+              />
+            </a>
           </div>
         </div>
         <div className='p-5 pt-8 max-w-md'>
@@ -51,7 +67,7 @@ export default function Home() {
           </p>
         </div>
       </div>
-      <div className='max-w-3xl mx-auto mt-10 p-5 md:p-0'>
+      <div className='max-w-3xl mx-auto mt-10 md:mt-20 p-5 md:p-0'>
         <h2>Sessions</h2>
         <div className='flex flex-col items-center mt-2'>
           {loading && (
