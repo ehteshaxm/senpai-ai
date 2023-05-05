@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Episode from '@/components/Episode';
 import { useAuth } from '../context/AuthContext';
-import { db } from '../firebase';
+import { db, analytics } from '../firebase';
 import { query, collection, getDocs } from 'firebase/firestore';
 
 export default function Home() {
@@ -10,6 +10,9 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    if (analytics !== null) {
+      console.log(analytics);
+    }
     fetchDocuments();
   }, []);
 
@@ -52,9 +55,21 @@ export default function Home() {
                 height='54'
               />
             </a>
+            <a
+              href='https://www.producthunt.com/posts/senpai-ai?utm_source=badge-top-post-topic-badge&utm_medium=badge&utm_souce=badge-senpai&#0045;ai'
+              target='_blank'
+            >
+              <img
+                src='https://api.producthunt.com/widgets/embed-image/v1/top-post-topic-badge.svg?post_id=391831&theme=light&period=weekly&topic_id=43'
+                alt='Senpai&#0032;AI - Let&#0032;our&#0032;AI&#0032;guide&#0032;you&#0032;through&#0032;meditation | Product Hunt'
+                className='w-52 md:w-64 mt-3'
+                width='250'
+                height='54'
+              />
+            </a>
           </div>
         </div>
-        <div className='p-5 pt-8 max-w-md'>
+        <div className='p-5 md:pt-16 pt-10 max-w-md'>
           <h1 className='text-4xl font-extrabold leading-tight'>senpai ai</h1>
           <p className='text-sm text-gray-400 leading-tight mt-2'>
             with senpai ai, you'll have access to a variety of meditation styles

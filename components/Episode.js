@@ -2,6 +2,8 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { storage } from '../firebase';
 import { ref, getDownloadURL } from 'firebase/storage';
+import { logEvent } from 'firebase/analytics';
+import { analytics } from '../firebase';
 
 const Episode = ({ name, date, emoji, url }) => {
   const [loaded, setLoaded] = useState(false);
@@ -30,6 +32,8 @@ const Episode = ({ name, date, emoji, url }) => {
 
         // Play the audio
         PlayRef.current.play();
+
+        logEvent(analytics, 'session played', { name: 'played a session' });
 
         setLoading(false);
         setIsPaused(false);
