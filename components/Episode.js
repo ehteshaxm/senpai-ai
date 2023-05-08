@@ -11,13 +11,8 @@ const Episode = ({ name, date, emoji, url }) => {
   const [loading, setLoading] = useState(false);
 
   const PlayRef = useRef();
-  const { user, signIn } = useAuth();
 
   async function playAudio() {
-    if (user === null) {
-      return signIn();
-    }
-
     setLoading(true);
 
     // Get a reference to the audio file in Firebase Storage
@@ -61,14 +56,7 @@ const Episode = ({ name, date, emoji, url }) => {
   console.log(PlayRef);
 
   return (
-    <div
-      className='w-full bg-gray-100 border rounded-xl p-5 px-7 flex justify-between items-center my-2 transition md:hover:scale-105'
-      onClick={() => {
-        if (user === null) {
-          signIn();
-        }
-      }}
-    >
+    <div className='w-full bg-gray-100 border rounded-xl p-5 px-7 flex justify-between items-center my-2 transition md:hover:scale-105'>
       <audio ref={PlayRef} onEnded={handleEnd} />
       <div className='flex items-center'>
         {loading === true ? (

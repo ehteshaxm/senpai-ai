@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Episode from '@/components/Episode';
-import { useAuth } from '../context/AuthContext';
 import { db, analytics } from '../firebase';
 import { query, collection, getDocs } from 'firebase/firestore';
 
